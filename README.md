@@ -17,3 +17,11 @@
         -> Ürün listeleme sayfası
     Bu sayfa da bootstrap yardımı ile oluşturduğumuz nav barımız var.
     Altında da yine bootstrap components olan thumbnails ile ürünlerimizi listeledik.
+
+    #shopping-cart.php 
+        -> Sepet sayfası
+     Bu sayfa da bootstrap ve custom.css dosyasına yazdığımız css kodları ile
+    sepet sayfasının front-end tasarımını oluşturduk. 
+      -Bir tablo oluşturarak sepete eklenecek ürünlerin listeleneceği tabloyu tasarladık.
+      -Sepet işlemlerinde oluşacak adet ve fiyat toplamlarının belirtileceği summary (özet)
+    alanlarını oluşturduk.  
