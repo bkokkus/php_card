@@ -13,3 +13,24 @@ body {
     top: -10px;
     left: -5px; 
 }
+
+.color-danger {
+    color : #d9554f;
+}
+
+.item-count-input{
+    width: 50px;
+}
+
+td {
+    vertical-align: middle!important;
+}
+
+tfoot th {
+    padding: 20px!important;
+    background-color: #dfdfdf!important;
+}
+
+table{
+    box-shadow: 0 0 8px rgba(5,5,5,.3);
+}
