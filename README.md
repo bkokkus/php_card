@@ -12,3 +12,8 @@
     sepet ve ürünlerimizin listeleneceği iki sayfa :
         -> index.php
         -> shopping-card.php
+
+    # index.php 
+        -> Ürün listeleme sayfası
+    Bu sayfa da bootstrap yardımı ile oluşturduğumuz nav barımız var.
+    Altında da yine bootstrap components olan thumbnails ile ürünlerimizi listeledik.
