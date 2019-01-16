@@ -1,8 +1,57 @@
 <?php
 
 include "db.php";
+session_start();
 
 function addToCart($product_item){
+
+        //SESSION
+        /**
+         * 
+         *  products
+        *       kedi maması ... adeti(2) ... fiyatı (100) .. 
+        *       kopek maması ... adeti(2) ... fiyatı (100) .. 
+        * 
+         *  summary
+         *         ürün adeti ve fiyat toplamı
+         */
+
+
+      if(isset($_SESSION["shoppingCart"])){
+        
+        $shoppingCart = $_SESSION["shoppingCart"];
+        $products = $shoppingCart['products'];
+      } else {
+          $products = array();
+      }
+
+      //ADET KONTROL
+      if(array_key_exists($product_item->id, $products)){
+          $products[$product_item->id]->count++;
+      } else {
+        $products[$product_item->id] = $product_item;
+      }
+
+      //Sepetin Hesaplanması
+
+      $total_price = 0.0;
+      $total_count = 0;
+
+      foreach ($products as $product){
+          $product->total_price = $product->count * $product->product_price;
+          $total_price = $total_price + $product->total_price;
+          $total_count += $product->count;
+      }
+
+      echo $total_count . "=>" . $total_price;
+      
+      $summary["total_price"] = $total_price;
+      $summary["total_count"] = $total_count;
+
+
+      $_SESSION["shoppingCart"]["products"] = $products;
+      $_SESSION["shoppingCart"]["summary"] = $summary;
+      
 
 }
 
@@ -25,8 +74,8 @@ if(isset($_POST["p"])){
         $id = $_POST["product_id"];
         
         $product = $db->query("SELECT * FROM cart WHERE id ={$id}", PDO::FETCH_OBJ)->fetch();
-
-        print_r($product);
+        $product->count = 1;
+        addToCart($product);
 
     } else if ($islem == "removeFromCart"){
 

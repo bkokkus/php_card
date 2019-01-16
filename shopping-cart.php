@@ -12,6 +12,14 @@
 
     <?php include "lib/navbar.php"; ?>
 
+    <?php 
+        session_start();
+        echo "<pre>";
+        print_r($_SESSION["shoppingCart"]);
+        die();
+    
+    ?>
+
     <!---------MAIN CONTENT--------------->
     <div class="container">
         <h2 class="text-center"> 

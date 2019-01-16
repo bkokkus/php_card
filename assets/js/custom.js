@@ -10,7 +10,7 @@
             }
 
             $.post(url, data, function(response){
-                alert(response);
+                console.log(response);
             })
 
         })
