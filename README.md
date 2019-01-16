@@ -1,4 +1,6 @@
 # php ile sepet uygulaması
+    # demo inceleme
+    http://beta.bekirkokkus.com/sepet/
 
     #sql dosyası
 
