@@ -41,19 +41,19 @@
                             <td class="text-center"><?php echo $product->product_name; ?></td>
                             <td class="text-center"><strong> <?php echo $product->product_price; ?> TL </strong></td>
                             <td class="text-center">
-                                <a href="#" class="btn btn-xs btn-success">
+                                <a href="lib/cart_db.php?p=incCount&product_id=<?php echo $product->id; ?>" class="btn btn-xs btn-success">
                                     <span class="glyphicon glyphicon-plus"></span>
                                 </a>
                                 <input type="text" value="<?php echo $product->count; ?>" class="item-count-input">
-                                <a href="#" class="btn btn-xs btn-danger">
+                                <a href="lib/cart_db.php?p=decCount&product_id=<?php echo $product->id; ?>" class="btn btn-xs btn-danger">
                                     <span class="glyphicon glyphicon-minus"></span>
                                 </a>
                             </td>
                             <td class="text-center"><?php echo $product->total_price; ?></td>
                             <td class="text-center">
-                                <a href="#" class="btn btn-danger btn-sm">
+                                <button product-id="<?php echo $product->id; ?>" class="btn btn-danger btn-sm removeFromCartBtn">
                                 <span class="glyphicon glyphicon-remove"></span> Sepetten Çıkar
-                                </a>
+                                </button>
                             </td>
                         </tr> 
 
@@ -82,6 +82,10 @@
     
     </div>
     <!---------MAIN CONTENT--------------->
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
 
 </body>
 </html>

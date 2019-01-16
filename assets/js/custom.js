@@ -14,4 +14,22 @@
             })
 
         })
+
+        $(".removeFromCartBtn").click(function(){
+            
+            var url = "lib/cart_db.php";
+            var data = {
+                p : "removeFromCart",
+                product_id : $(this).attr("product-id")
+            }
+
+            $.post(url, data, function(response){
+
+                window.location.reload();
+
+            })
+
+        })
+
+        
     })
