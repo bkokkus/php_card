@@ -42,4 +42,16 @@
     # lib/db.php
     dosya ile veritabanımıza bağlandık.
 
+    # assets/js/custom.js
+    Kendi js , jquery kodlarımızın olduğu dosya.
+    Burada jquery ile sepete ekle butonuna tıklandığı durumda post işlemi yaptık.
+    Dönen veriyi ekrana bastık.
+
+    # lib/php_cart.php
+    Daha sonra kodlayacağımız 4 adet fonksiyon oluşturduk.
+    custom.js dosyasından gelen post parametreleri ile ;
+      ->veri tabanından verileri çektik.
+      ->verileri ekrana bastık
+
+
 
