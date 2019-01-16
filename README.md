@@ -53,5 +53,8 @@
       ->veri tabanından verileri çektik.
       ->verileri ekrana bastık
 
+    # reset.php
+        Geçici olarak session boşaltıp. liste sayfamıza (index.php) ye yönlendiriyor.
+
 
 
