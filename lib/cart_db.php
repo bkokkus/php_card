@@ -43,7 +43,7 @@ function addToCart($product_item){
           $total_count += $product->count;
       }
 
-      echo $total_count . "=>" . $total_price;
+      //echo $total_count . "=>" . $total_price;
       
       $summary["total_price"] = $total_price;
       $summary["total_count"] = $total_count;
@@ -52,7 +52,7 @@ function addToCart($product_item){
       $_SESSION["shoppingCart"]["products"] = $products;
       $_SESSION["shoppingCart"]["summary"] = $summary;
       
-
+      return $total_count;
 }
 
 function removeFromCart($product_id){
@@ -75,7 +75,7 @@ if(isset($_POST["p"])){
         
         $product = $db->query("SELECT * FROM cart WHERE id ={$id}", PDO::FETCH_OBJ)->fetch();
         $product->count = 1;
-        addToCart($product);
+        echo addToCart($product);
 
     } else if ($islem == "removeFromCart"){
 

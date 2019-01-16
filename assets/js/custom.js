@@ -10,7 +10,7 @@
             }
 
             $.post(url, data, function(response){
-                console.log(response);
+                $(".cart-count").text(response);
             })
 
         })

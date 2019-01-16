@@ -9,143 +9,76 @@
    
 </head>
 <body>
-
-    <?php include "lib/navbar.php"; ?>
-
-    <?php 
-        session_start();
-        echo "<pre>";
-        print_r($_SESSION["shoppingCart"]);
-        die();
-    
-    ?>
+      <?php include "lib/navbar.php"; ?>
 
     <!---------MAIN CONTENT--------------->
     <div class="container">
+        <?php if($total_count > 0) { ?> 
         <h2 class="text-center"> 
-        Sepetinizde <strong class="color-danger">5</strong> adet ürün bulunmaktadır.
+        Sepetinizde <strong class="color-danger"><?php echo $total_count; ?></strong> adet ürün bulunmaktadır.
         </h2>    
-    <hr>
+        <hr>
 
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <table class="table table-hover table-bordered table-striped">
-                <thead>
-                    <th class="text-center">Ürün Resmi</th>
-                    <th class="text-center">Ürün Adı</th>
-                    <th class="text-center">Ürün Fiyatı</th>
-                    <th class="text-center">Adeti</th>
-                    <th class="text-center">Toplam</th>
-                    <th class="text-center">Sepetten Çıkar</th>
-                </thead>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <table class="table table-hover table-bordered table-striped">
+                    <thead>
+                        <th class="text-center">Ürün Resmi</th>
+                        <th class="text-center">Ürün Adı</th>
+                        <th class="text-center">Ürün Fiyatı</th>
+                        <th class="text-center">Adeti</th>
+                        <th class="text-center">Toplam</th>
+                        <th class="text-center">Sepet İşlemleri</th>
+                    </thead>
 
-                <tbody>
-                    <tr>
-                        <td class="text-center">
-                            <img width="50px" src="assets/img/kedi.png" alt="">
-                        </td>
-                        <td class="text-center">bbk Kedi Maması</td>
-                        <td class="text-center"><strong>100 ₺ </strong></td>
-                        <td class="text-center">
-                            <a href="#" class="btn btn-xs btn-success">
-                                <span class="glyphicon glyphicon-plus"></span>
-                            </a>
-                            <input type="text" value="3" class="item-count-input">
-                            <a href="#" class="btn btn-xs btn-danger">
-                                <span class="glyphicon glyphicon-minus"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">300 ₺</td>
-                        <td class="text-center">
-                            <a href="#" class="btn btn-danger btn-sm">
-                            <span class="glyphicon glyphicon-remove"></span> Sepetten Çıkar
-                            </a>
-                        </td>
-                    </tr> 
+                    <tbody>
+                        
+                        <?php foreach($shopping_products as $product) { ?> 
+                        <tr>
+                            <td class="text-center">
+                                <img width="50px" src="assets/img/<?php echo $product->product_img_url; ?>" alt="<?php echo $product->product_name; ?>">
+                            </td>
+                            <td class="text-center"><?php echo $product->product_name; ?></td>
+                            <td class="text-center"><strong> <?php echo $product->product_price; ?> TL </strong></td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-xs btn-success">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </a>
+                                <input type="text" value="<?php echo $product->count; ?>" class="item-count-input">
+                                <a href="#" class="btn btn-xs btn-danger">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </a>
+                            </td>
+                            <td class="text-center"><?php echo $product->total_price; ?></td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove"></span> Sepetten Çıkar
+                                </a>
+                            </td>
+                        </tr> 
 
-                    
-                    <tr>
-                        <td class="text-center">
-                            <img width="50px" src="assets/img/kedi.png" alt="">
-                        </td>
-                        <td class="text-center">bbk Kedi Maması</td>
-                        <td class="text-center"><strong>100 ₺ </strong></td>
-                        <td class="text-center">
-                            <a href="#" class="btn btn-xs btn-success">
-                                <span class="glyphicon glyphicon-plus"></span>
-                            </a>
-                            <input type="text" value="3" class="item-count-input">
-                            <a href="#" class="btn btn-xs btn-danger">
-                                <span class="glyphicon glyphicon-minus"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">300 ₺</td>
-                        <td class="text-center">
-                            <a href="#" class="btn btn-danger btn-sm">
-                            <span class="glyphicon glyphicon-remove"></span> Sepetten Çıkar
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">
-                            <img width="50px" src="assets/img/kedi.png" alt="">
-                        </td>
-                        <td class="text-center">bbk Kedi Maması</td>
-                        <td class="text-center"><strong>100 ₺ </strong></td>
-                        <td class="text-center">
-                            <a href="#" class="btn btn-xs btn-success">
-                                <span class="glyphicon glyphicon-plus"></span>
-                            </a>
-                            <input type="text" value="3" class="item-count-input">
-                            <a href="#" class="btn btn-xs btn-danger">
-                                <span class="glyphicon glyphicon-minus"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">300 ₺</td>
-                        <td class="text-center">
-                            <a href="#" class="btn btn-danger btn-sm">
-                            <span class="glyphicon glyphicon-remove"></span> Sepetten Çıkar
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">
-                            <img width="50px" src="assets/img/kedi.png" alt="">
-                        </td>
-                        <td class="text-center">bbk Kedi Maması</td>
-                        <td class="text-center"><strong>100 ₺ </strong></td>
-                        <td class="text-center">
-                            <a href="#" class="btn btn-xs btn-success">
-                                <span class="glyphicon glyphicon-plus"></span>
-                            </a>
-                            <input type="text" value="3" class="item-count-input">
-                            <a href="#" class="btn btn-xs btn-danger">
-                                <span class="glyphicon glyphicon-minus"></span>
-                            </a>
-                        </td>
-                        <td class="text-center">300 ₺</td>
-                        <td class="text-center">
-                            <a href="#" class="btn btn-danger btn-sm">
-                            <span class="glyphicon glyphicon-remove"></span> Sepetten Çıkar
-                            </a>
-                        </td>
-                    </tr>
-                  
-                    
-                </tbody>
+                        <?php } ?>
+                        
+                        
+                        
+                    </tbody>
 
-                <tfoot>
-                    <th colspan="2" class="text-right">
-                        Toplam Ürün : <span class="color-danger">4 adet</span>
-                    </th>            
-                    <th colspan="4" class="text-right">
-                        Toplam Tutar : <span class="color-danger">1200 TL</span>
-                    </th>            
-                </tfoot>
-            </table>
+                    <tfoot>
+                        <th colspan="2" class="text-right">
+                            Toplam Ürün : <span class="color-danger"><?php echo $total_count; ?> adet</span>
+                        </th>            
+                        <th colspan="4" class="text-right">
+                            Toplam Tutar : <span class="color-danger"><?php echo $total_price; ?> TL</span>
+                        </th>            
+                    </tfoot>
+                </table>
+            </div>
         </div>
-    </div>
-
+        <?php } else { ?>
+            <div class="alert alert-info">
+                <strong>Sepetinizde henüz ürün bulunmamaktadır! Eklemek için <a href="index.php"> tıklayınız.</a></strong>
+            </div>
+        <?php  } ?>
     
     </div>
     <!---------MAIN CONTENT--------------->
