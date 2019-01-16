@@ -42,11 +42,11 @@
                                 <p><?php echo $product->product_detail; ?></p>
                                 <p class="text-right price-container"><?php echo $product->product_price; ?> TL</p>
                                 <p>
-                                    <a href="#" class="btn btn-primary btn-block" role="block">
+                                    <button product-id="<?php echo $product->id; ?>" class="btn btn-primary btn-block addToCartBtn" role="block">
                                         <span class="glyphicon glyphicon-shopping-cart">
                                         </span>
                                         Sepete Ekle
-                                    </a>
+                                    </button>
                                 </p>
                             </div>
                     </div>
