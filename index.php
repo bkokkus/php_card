@@ -12,6 +12,13 @@
 </head>
 <body>
 
+    <?php require_once("lib/db.php"); ?>
+
+    <?php
+        //verileri çekme bölümü
+        $products = $db->query("SELECT * FROM cart order by id DESC", PDO::FETCH_OBJ)->fetchAll();
+    ?>
+
     <!------------- HEADER ------------------------------>
     <?php include "lib/navbar.php"; ?>
 
@@ -24,13 +31,16 @@
         <hr>
 
         <div class="row">
+
+          <?php foreach ($products as $product) { ?> 
+        
             <div class="col-sm-6 col-md-3">
                     <div class="thumbnail">
-                        <img width="200" src="assets/img/kedi.png" alt="...">
+                        <img class="img img-responsive img-custom" src="assets/img/<?php echo $product->product_img_url; ?>" alt="<?php echo $product->product_name; ?>">
                             <div class="caption">
-                                <h3>Kedi Maması</h3>
-                                <p>Çok güzel bir kedi maması</p>
-                                <p class="text-right price-container">100.00 ₺</p>
+                                <h3><?php echo $product->product_name; ?></h3>
+                                <p><?php echo $product->product_detail; ?></p>
+                                <p class="text-right price-container"><?php echo $product->product_price; ?> TL</p>
                                 <p>
                                     <a href="#" class="btn btn-primary btn-block" role="block">
                                         <span class="glyphicon glyphicon-shopping-cart">
@@ -41,125 +51,10 @@
                             </div>
                     </div>
             </div>
-            <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img width="200" src="assets/img/kedi.png" alt="...">
-                            <div class="caption">
-                                <h3>Kedi Maması</h3>
-                                <p>Çok güzel bir kedi maması</p>
-                                <p class="text-right price-container">100.00 ₺</p>
-                                <p>
-                                    <a href="#" class="btn btn-primary btn-block" role="block">
-                                        <span class="glyphicon glyphicon-shopping-cart">
-                                        </span>
-                                        Sepete Ekle
-                                    </a>
-                                </p>
-                            </div>
-                    </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img width="200" src="assets/img/kedi.png" alt="...">
-                            <div class="caption">
-                                <h3>Kedi Maması</h3>
-                                <p>Çok güzel bir kedi maması</p>
-                                <p class="text-right price-container">100.00 ₺</p>
-                                <p>
-                                    <a href="#" class="btn btn-primary btn-block" role="block">
-                                        <span class="glyphicon glyphicon-shopping-cart">
-                                        </span>
-                                        Sepete Ekle
-                                    </a>
-                                </p>
-                            </div>
-                    </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img width="200" src="assets/img/kedi.png" alt="...">
-                            <div class="caption">
-                                <h3>Kedi Maması</h3>
-                                <p>Çok güzel bir kedi maması</p>
-                                <p class="text-right price-container">100.00 ₺</p>
-                                <p>
-                                    <a href="#" class="btn btn-primary btn-block" role="block">
-                                        <span class="glyphicon glyphicon-shopping-cart">
-                                        </span>
-                                        Sepete Ekle
-                                    </a>
-                                </p>
-                            </div>
-                    </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img width="200" src="assets/img/kedi.png" alt="...">
-                            <div class="caption">
-                                <h3>Kedi Maması</h3>
-                                <p>Çok güzel bir kedi maması</p>
-                                <p class="text-right price-container">100.00 ₺</p>
-                                <p>
-                                    <a href="#" class="btn btn-primary btn-block" role="block">
-                                        <span class="glyphicon glyphicon-shopping-cart">
-                                        </span>
-                                        Sepete Ekle
-                                    </a>
-                                </p>
-                            </div>
-                    </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img width="200" src="assets/img/kedi.png" alt="...">
-                            <div class="caption">
-                                <h3>Kedi Maması</h3>
-                                <p>Çok güzel bir kedi maması</p>
-                                <p class="text-right price-container">100.00 ₺</p>
-                                <p>
-                                    <a href="#" class="btn btn-primary btn-block" role="block">
-                                        <span class="glyphicon glyphicon-shopping-cart">
-                                        </span>
-                                        Sepete Ekle
-                                    </a>
-                                </p>
-                            </div>
-                    </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img width="200" src="assets/img/kedi.png" alt="...">
-                            <div class="caption">
-                                <h3>Kedi Maması</h3>
-                                <p>Çok güzel bir kedi maması</p>
-                                <p class="text-right price-container">100.00 ₺</p>
-                                <p>
-                                    <a href="#" class="btn btn-primary btn-block" role="block">
-                                        <span class="glyphicon glyphicon-shopping-cart">
-                                        </span>
-                                        Sepete Ekle
-                                    </a>
-                                </p>
-                            </div>
-                    </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img width="200" src="assets/img/kedi.png" alt="...">
-                            <div class="caption">
-                                <h3>Kedi Maması</h3>
-                                <p>Çok güzel bir kedi maması</p>
-                                <p class="text-right price-container">100.00 ₺</p>
-                                <p>
-                                    <a href="#" class="btn btn-primary btn-block" role="block">
-                                        <span class="glyphicon glyphicon-shopping-cart">
-                                        </span>
-                                        Sepete Ekle
-                                    </a>
-                                </p>
-                            </div>
-                    </div>
-            </div>
+
+            <?php } ?>     
+
+
         </div>
     </div>
 

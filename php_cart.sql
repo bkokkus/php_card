@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 16, 2019 at 12:04 AM
+-- Generation Time: Jan 16, 2019 at 09:52 AM
 -- Server version: 5.7.24-0ubuntu0.18.04.1
 -- PHP Version: 7.2.10-0ubuntu0.18.04.1
 
@@ -17,16 +17,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `php_card`
+-- Database: `php_cart`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `card`
+-- Table structure for table `cart`
 --
 
-CREATE TABLE `card` (
+CREATE TABLE `cart` (
   `id` int(11) NOT NULL,
   `product_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `product_detail` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -35,13 +35,23 @@ CREATE TABLE `card` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `product_name`, `product_detail`, `product_price`, `product_img_url`) VALUES
+(1, 'Kedi Maması', 'Çok lezzetli bir kedi maması', 100.00, 'kedi.png'),
+(2, 'Köpek Maması', 'Çok lezzetli bir kedi maması', 80.00, 'kopek.png'),
+(3, 'Kedi Kolyesi', 'Kediniz bu kolyeyi çok sevecek', 50.00, 'kolye.png'),
+(4, 'Kopek Tasması', 'Kediniz bu tasmayı çok sevecek', 60.00, 'tasma.png');
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `card`
+-- Indexes for table `cart`
 --
-ALTER TABLE `card`
+ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -49,10 +59,10 @@ ALTER TABLE `card`
 --
 
 --
--- AUTO_INCREMENT for table `card`
+-- AUTO_INCREMENT for table `cart`
 --
-ALTER TABLE `card`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

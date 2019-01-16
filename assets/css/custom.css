@@ -34,3 +34,8 @@ tfoot th {
 table{
     box-shadow: 0 0 8px rgba(5,5,5,.3);
 }
+
+.img-custom {
+    width: 200px!important;
+    height: 200px!important;
+}
