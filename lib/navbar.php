@@ -41,8 +41,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="shopping-cart.php">
-                        <span class="glyphicon glyphicon-shopping-cart cart-icon"></span>
-                        <span class="badge cart-count"><?php echo (empty($total_count)) ? 0 : $total_count ; ?></span>
+                            <span class="glyphicon glyphicon-shopping-cart cart-icon"></span>
+                            <span class="badge cart-count"><?php echo (empty($total_count)) ? 0 : $total_count ; ?></span>
                     </a>
                 </li>
             
